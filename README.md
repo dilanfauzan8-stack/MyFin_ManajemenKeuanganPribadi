@@ -1,10 +1,10 @@
-# 📌 MyFin — Aplikasi Manajemen Keuangan Pribadi
+#  MyFin — Aplikasi Manajemen Keuangan Pribadi
 UTS Mata Kuliah **Pengembangan Web**  
 Dosen Pengampu: **ABDUL MALIK, S.Kom., M.Cs.** & **HASRIANI, S.Kom., M.Kom**
 
 ---
 
-## 👥 Kelompok 3 — Informatika
+##  Kelompok 3 — Informatika
 1. **Fauzan Azima** (Ketua)  
 2. **Gefran**  
 3. **Farida Nur Intan**  
@@ -13,7 +13,7 @@ Dosen Pengampu: **ABDUL MALIK, S.Kom., M.Cs.** & **HASRIANI, S.Kom., M.Kom**
 
 ---
 
-# 📝 Deskripsi Proyek
+#  Deskripsi Proyek
 **MyFin** adalah aplikasi web untuk mengelola keuangan pribadi.  
 Fitur meliputi pencatatan pemasukan, pengeluaran, kategori transaksi, riwayat transaksi, serta pembuatan laporan PDF.
 
@@ -30,9 +30,9 @@ Dibuat sebagai pemenuhan **UTS Pengembangan Web**, dengan fokus pada implementas
 
 ---
 
-# 🚀 Fitur Aplikasi
+#  Fitur Aplikasi
 
-### 🔐 Autentikasi
+###  Autentikasi
 - Login
 - Register
 - Logout
@@ -40,29 +40,29 @@ Dibuat sebagai pemenuhan **UTS Pengembangan Web**, dengan fokus pada implementas
 - Cookies
 - Middleware auth & admin
 
-### 👥 Role Management
+###  Role Management
 - **User**: Transaksi & Kategori  
 - **Admin**: Kelola User (Tambah, Hapus, Reset Password)
 
-### 💰 Manajemen Transaksi
+###  Manajemen Transaksi
 - Tambah, Edit, Hapus
 - Filter tanggal
 - Searching
 - Pagination
 
-### 🗂 Manajemen Kategori
+###  Manajemen Kategori
 - Income
 - Expense
 - CRUD Lengkap
 
-### 📊 Dashboard
+###  Dashboard
 - Total pemasukan
 - Total pengeluaran
 - Saldo akhir
 - Grafik batang (Canvas API)
 - UI modern & responsive
 
-### 📄 Laporan PDF
+###  Laporan PDF
 - Rekap pendapatan
 - Rekap pengeluaran
 - Saldo akhir
@@ -71,7 +71,7 @@ Dibuat sebagai pemenuhan **UTS Pengembangan Web**, dengan fokus pada implementas
 
 ---
 
-# 📁 Struktur Folder Project
+#  Struktur Folder Project
 
 ```
 keuangan_pribadi/
@@ -109,7 +109,7 @@ keuangan_pribadi/
 
 ---
 
-# ⚙️ Cara Menjalankan Aplikasi
+#  Cara Menjalankan Aplikasi
 
 ### 1️⃣ Install XAMPP
 Aktifkan **Apache** dan **MySQL**
@@ -137,19 +137,19 @@ http://localhost/keuangan_pribadi/public/login.php
 
 ---
 
-# 🔑 Akun Demo
+#  Akun Demo
 
-### 👮 Admin
+###  Admin
 - username: **admin**
 - password: **admin123**
 
-### 👤 User
+###  User
 - username: **user1**
 - password: **123456**
 
 ---
 
-# 🧩 Teknologi yang Digunakan
+#  Teknologi yang Digunakan
 - PHP Native
 - MySQL
 - HTML5
@@ -160,17 +160,15 @@ http://localhost/keuangan_pribadi/public/login.php
 
 ---
 
-# 🏁 Status Project
-✔ CRUD Lengkap  
-✔ Responsive Design  
-✔ Session & Cookie  
-✔ Export PDF  
-✔ Dashboard  
-✔ Admin & User Roles  
-✔ Siap dikumpulkan UTS 🎉
+#  Status Project
+ CRUD Lengkap  
+ Responsive Design  
+ Session & Cookie  
+ Export PDF  
+ Dashboard  
+ Admin & User Roles  
 
 ---
 
-# 🎓 Dibuat oleh Kelompok 3 — Informatika
-Terima kasih 🙌  
+#  Dibuat oleh Kelompok 3 — Informatika
 Project ini dibuat untuk memenuhi UTS mata kuliah Pengembangan Web.
