@@ -1,7 +1,7 @@
-
 # MyFin — Aplikasi Manajemen Keuangan Pribadi
 
 UAS Mata Kuliah **Pengembangan Web Berbasis API Sistem**
+
 Dosen Pengampu: **ABDUL MALIK, S.Kom., M.Cs.** & **HASRIANI, S.Kom., M.Kom**
 
 ---
@@ -79,7 +79,7 @@ Pada sistem ini diterapkan konsep komunikasi dua web sebagai berikut:
 * **Web Server (Backend API)** menyediakan data dan logika bisnis
 * Komunikasi dilakukan melalui RESTful API menggunakan HTTP Method dan JSON
 
-Konsep ini disimulasikan dalam satu project untuk keperluan akademik.
+Konsep ini disimulasikan dalam satu project.
 
 ---
 
