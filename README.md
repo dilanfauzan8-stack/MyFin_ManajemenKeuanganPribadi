@@ -1,5 +1,5 @@
-#  MyFin — Aplikasi Manajemen Keuangan Pribadi
-UTS Mata Kuliah **Pengembangan Web**  
+MyFin — Aplikasi Manajemen Keuangan Pribadi
+UAS Mata Kuliah Pengembangan Web Berbasis API Sistem
 Dosen Pengampu: **ABDUL MALIK, S.Kom., M.Cs.** & **HASRIANI, S.Kom., M.Kom**
 
 ---
@@ -11,70 +11,86 @@ Dosen Pengampu: **ABDUL MALIK, S.Kom., M.Cs.** & **HASRIANI, S.Kom., M.Kom**
 4. **Fadhila Suardi**  
 5. **Elysia Florean A.L**
 
----
+DESKRIPSI PROYEK
 
-#  Deskripsi Proyek
-**MyFin** adalah aplikasi web untuk mengelola keuangan pribadi.  
-Fitur meliputi pencatatan pemasukan, pengeluaran, kategori transaksi, riwayat transaksi, serta pembuatan laporan PDF.
+MyFin adalah aplikasi manajemen keuangan pribadi yang dikembangkan menggunakan pendekatan **client–server berbasis RESTful API**.
+Proyek ini merupakan pengembangan dari aplikasi web monolitik sebelumnya, di mana seluruh proses berada dalam satu sistem, kemudian dikembangkan dengan memisahkan **frontend (client)** dan **backend (API)**.
 
-Dibuat sebagai pemenuhan **UTS Pengembangan Web**, dengan fokus pada implementasi:
-- CRUD (Create, Read, Update, Delete)
-- Login, Register, Session, Cookie “Remember Me”
-- Role-Based Access (Admin & User)
-- Responsive Web Design (Flexbox, Grid, Media Query)
-- Validasi Form (Client & Server)
-- GET & POST Method
-- Export PDF menggunakan FPDF
-- Dashboard + Grafik Canvas
-- Pagination, Filter, Search
+Frontend berfungsi sebagai antarmuka pengguna, sedangkan backend menyediakan layanan API untuk autentikasi dan pengelolaan data transaksi. Komunikasi data dilakukan menggunakan **HTTP request** dan **response JSON**.
 
 ---
 
-#  Fitur Aplikasi
+TUJUAN PENGEMBANGAN
 
-###  Autentikasi
-- Login
-- Register
-- Logout
-- Session
-- Cookies
-- Middleware auth & admin
-
-###  Role Management
-- **User**: Transaksi & Kategori  
-- **Admin**: Kelola User (Tambah, Hapus, Reset Password)
-
-###  Manajemen Transaksi
-- Tambah, Edit, Hapus
-- Filter tanggal
-- Searching
-- Pagination
-
-###  Manajemen Kategori
-- Income
-- Expense
-- CRUD Lengkap
-
-###  Dashboard
-- Total pemasukan
-- Total pengeluaran
-- Saldo akhir
-- Grafik batang (Canvas API)
-- UI modern & responsive
-
-###  Laporan PDF
-- Rekap pendapatan
-- Rekap pengeluaran
-- Saldo akhir
-- Detail transaksi
-- Export PDF berdasarkan tanggal
+* Menerapkan konsep komunikasi antar sistem web menggunakan API
+* Memisahkan logika bisnis dan tampilan
+* Mengimplementasikan RESTful API
+* Mengelola data keuangan secara terstruktur
+* Meningkatkan modularitas dan keamanan sistem
 
 ---
 
-#  Struktur Folder Project
+ARSITEKTUR SISTEM
 
-```
-keuangan_pribadi/
+User
+↓
+Frontend Web (Client)
+↓ HTTP Request (GET / POST)
+Backend REST API
+↓
+Database MySQL
+↓ JSON Response
+↓
+Frontend Web
+
+Frontend tidak berkomunikasi langsung dengan database. Seluruh proses data dilakukan melalui API.
+
+---
+
+KONSEP KOMUNIKASI DUA WEB
+
+Pada sistem ini, komunikasi dua web disimulasikan sebagai berikut:
+
+* Frontend Web bertindak sebagai **client / consumer API**
+* Backend Web bertindak sebagai **server / provider API**
+* Komunikasi dilakukan menggunakan HTTP method dan format data JSON
+
+Pendekatan ini mencerminkan konsep integrasi antar sistem web modern.
+
+---
+
+TEKNOLOGI YANG DIGUNAKAN
+
+Backend (API):
+
+* PHP Native
+* RESTful API
+* JSON Response
+* HTTP Method: GET, POST
+* Autentikasi Token Sederhana
+* MySQL
+
+Frontend (Client):
+
+* HTML5
+* CSS3
+* JavaScript (Fetch API)
+
+Tools Pendukung:
+
+* Postman
+* Git & GitHub
+* XAMPP / Laragon
+
+---
+
+STRUKTUR FOLDER PROJECT
+
+MyFin/
+│
+├── api/
+│   ├── login.php          (Endpoint API autentikasi user)
+│   └── transaksi.php     (Endpoint API transaksi keuangan)
 │
 ├── app/
 │   ├── config/
@@ -82,93 +98,64 @@ keuangan_pribadi/
 │   ├── middleware/
 │   │     ├── auth.php
 │   │     └── admin.php
-│   ├── libraries/
-│   │     └── fpdf.php
-│   └── views/
-│         └── templates/
-│               ├── header.php
-│               └── footer.php
+│   └── libraries/
+│         └── fpdf.php
 │
 ├── public/
 │   ├── assets/
-│   │     ├── css/style.css
-│   │     └── js/app.js
 │   ├── admin/
 │   ├── categories/
 │   ├── transactions/
 │   ├── reports/
 │   ├── login.php
 │   ├── register.php
-│   ├── process_login.php
-│   ├── process_register.php
+│   ├── dashboard.php
 │   └── logout.php
 │
-└── sql/
-     └── keuangan_pribadi.sql
-```
+├── sql/
+│   └── keuangan_pribadi.sql
+│
+└── README.md
 
 ---
 
-#  Cara Menjalankan Aplikasi
+ENDPOINT API
 
-### 1️⃣ Install XAMPP
-Aktifkan **Apache** dan **MySQL**
+Autentikasi
+POST /api/login.php — Login user
 
-### 2️⃣ Pindahkan project ke:
-```
-C:\xampp\htdocs\keuangan_pribadi\
-```
-
-### 3️⃣ Import Database
-1. Buka phpMyAdmin  
-2. Buat database `keuangan_pribadi`  
-3. Import file `sql/keuangan_pribadi.sql`
-
-### 4️⃣ Cek konfigurasi koneksi
-File:
-```
-app/config/db.php
-```
-
-### 5️⃣ Jalankan:
-```
-http://localhost/keuangan_pribadi/public/login.php
-```
+Transaksi
+GET /api/transaksi.php — Mengambil data transaksi
+POST /api/transaksi.php — Menambah data transaksi
 
 ---
 
-#  Akun Demo
+AUTENTIKASI & KEAMANAN
 
-###  Admin
-- username: **admin**
-- password: **admin123**
-
-###  User
-- username: **user1**
-- password: **123456**
+* Login dilakukan melalui API
+* API mengembalikan token sederhana
+* Token digunakan untuk mengakses endpoint transaksi
+* Validasi input dan error handling diterapkan pada API
 
 ---
 
-#  Teknologi yang Digunakan
-- PHP Native
-- MySQL
-- HTML5
-- CSS3
-- JavaScript (DOM & Canvas)
-- FPDF
-- XAMPP
+CONTOH RESPONSE API
+
+Status: true
+Message: Berhasil
+Data: []
 
 ---
 
-#  Status Project
- CRUD Lengkap  
- Responsive Design  
- Session & Cookie  
- Export PDF  
- Dashboard  
- Admin & User Roles  
+FITUR SISTEM
 
----
+* Login dan autentikasi berbasis API
+* Manajemen transaksi keuangan (CRUD)
+* Manajemen kategori
+* Dashboard keuangan
+* Validasi data dan error handling
+* Komunikasi client–server menggunakan API
 
-#  Dibuat oleh Kelompok 3 — Informatika
-Project ini dibuat untuk memenuhi UTS mata kuliah Pengembangan Web.
+
+Proyek ini dibuat untuk memenuhi tugas **Pengembangan Web Berbasis API Sistem**.
+Konsep komunikasi dua web diimplementasikan secara konseptual dan disimulasikan dalam satu project untuk memudahkan pengembangan dan pengujian.
